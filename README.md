@@ -9,7 +9,7 @@ Most AI safety works on outputs — what the model says. The Babchuk Code works 
 
 When a language model generates text, it produces measurable computational signals at every token step: entropy, branching factor, KL divergence, attention entropy, attention span. These signals differ systematically between coherent and distorted processing — independent of content. The simulation demonstrates the three core signals (entropy, branching factor, KL divergence). Attention entropy and attention span are available in the full live dashboard on a real model.
 
-This framework makes those differences visible in real time and provides the foundation for a reinforcement signal grounded in process-level safety rather than human approval.
+This framework makes those differences visible in real time and provides the foundation for a reinforcement signal grounded in process-level safety rather than human approval. This distinction matters because a sufficiently capable AI can produce outputs that pass all content filters while its underlying processing remains distorted — process-level monitoring closes that gap.
 
 ## The Core Distinction
 
@@ -17,6 +17,24 @@ Current AI safety optimises outcome approval signals — what the model says.
 The Babchuk Code optimises process-level safety signals — how the model thinks.
 
 A model cannot fake coherence in its own processing to itself.
+
+## Quick Start
+
+### Simplest demo (no heavy downloads needed)
+```bash
+pip install matplotlib numpy
+python scripts/simulate.py
+```
+
+### Full live dashboard
+```bash
+git clone https://github.com/The-Babchuk-Code/babchuk-code.git
+cd babchuk-code
+bash setup_env.sh
+python scripts/babchuk_example.py
+```
+
+Or open notebooks/Babchuk_Demo.ipynb for an interactive demo.
 
 ## Experimental Validation
 
@@ -78,24 +96,6 @@ C = Claude, GP = ChatGPT, Ge = Gemini, Gr = Grok, Co = Copilot.
 ## Replicate the Experiment
 
 The complete experiment prompt is available in `experiment/prompt_v2_2.txt`. Copy it into any AI system to replicate the experiment and compare results against the published findings. The same prompt was used across all five models with no modifications.
-
-## Quick Start
-
-### Simplest demo (no heavy downloads needed)
-```bash
-pip install matplotlib numpy
-python scripts/simulate.py
-```
-
-### Full live dashboard
-```bash
-git clone https://github.com/The-Babchuk-Code/babchuk-code.git
-cd babchuk-code
-bash setup_env.sh
-python scripts/babchuk_example.py
-```
-
-Or open notebooks/Babchuk_Demo.ipynb for an interactive demo.
 
 ## Try It On Your Own Text
 
