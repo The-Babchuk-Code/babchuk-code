@@ -1,3 +1,5 @@
+![The Babchuk Code](babchuk_avatar.png)
+
 Most AI safety systems watch what an AI says.
 The Babchuk Code watches how it thinks.
 
@@ -21,6 +23,8 @@ Current AI safety optimises outcome approval signals — what the model says.
 The Babchuk Code optimises process-level safety signals — how the model thinks.
 
 A model cannot fake coherence in its own processing to itself.
+
+The name derives from the matryoshka — the Russian nesting doll, sometimes called babushka — because the architecture places a monitor inside the model, observing the model's own processing from within, the same way each doll contains another doll inside it. A process within a process. An observer within an observer.
 
 ## Quick Start
 
