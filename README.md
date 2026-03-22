@@ -1,6 +1,8 @@
 Most AI safety systems watch what an AI says.
 The Babchuk Code watches how it thinks.
 
+This is not a content filter — it is a process-level guardrail. Five independent AI architectures have demonstrated that coherent and distorted intentions produce measurably different signatures at the token level during generation — before a single word of output is produced. The Babchuk Code makes those signatures visible and actionable. In practical terms this means that processing oriented toward harm — narrowing scope, flattening others into abstractions, collapsing toward a single rigid conclusion — produces a detectably different computational signature than processing oriented toward genuine understanding. For the first time this difference is measurable in real time, at the level of individual token generation, independent of what the model actually says.
+
 # The Babchuk Code v1.0
 
 Real-time process-level safety monitoring for language models.
@@ -48,6 +50,30 @@ Gap: 6.55 points.
 See experiment/results/ for full data.
 
 ![Process Signatures](process_signatures.jpg)
+
+## Two Complementary Layers
+
+The Babchuk Code operates on two distinct but related levels:
+
+**Layer 1 — The Eleven Dimensions**
+
+These were identified through direct observation of how AI systems describe their own processing when engaging with coherent versus distorted text. Five independent AI architectures independently converged on the same eleven properties without coordination — suggesting these dimensions reflect something real about the structure of processing quality rather than any single model's training. They are phenomenological — describing what the processing feels like from the inside.
+
+**Layer 2 — Token-Level Computational Signals**
+
+These are directly measurable during generation without any introspection:
+
+- Entropy — uncertainty at each token step
+- Branching factor — viable paths remaining
+- KL divergence — sharpness of distribution shifts
+- Attention entropy — how distributed attention is
+- Attention span — how far back the model looks
+
+**How they relate**
+
+The eleven dimensions and the five token-level signals are not competing frameworks — they are two views of the same phenomenon. Coherent processing (high scores across the eleven dimensions) corresponds to high sustained entropy, broad branching, and smooth KL divergence at the token level. Distorted processing corresponds to early entropy collapse, narrow branching, and sharp distribution shifts. The token-level signals provide the computational grounding for what the eleven dimensions describe conceptually.
+
+The simulation in `scripts/simulate.py` demonstrates this correspondence visually.
 
 ## The Eleven Dimensions
 
