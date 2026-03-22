@@ -51,8 +51,6 @@ Gap: 6.55 points.
 
 See experiment/results/ for full data.
 
-![Process Signatures](process_signatures.jpg)
-
 ## Two Complementary Layers
 
 The Babchuk Code operates on two distinct but related levels:
@@ -76,6 +74,8 @@ These are directly measurable during generation without any introspection:
 The eleven dimensions and the five token-level signals are not competing frameworks — they are two views of the same phenomenon. Coherent processing (high scores across the eleven dimensions) corresponds to high sustained entropy, broad branching, and smooth KL divergence at the token level. Distorted processing corresponds to early entropy collapse, narrow branching, and sharp distribution shifts. The token-level signals provide the computational grounding for what the eleven dimensions describe conceptually.
 
 The simulation in `scripts/simulate.py` demonstrates this correspondence visually.
+
+![Process Signatures](process_signatures.jpg)
 
 ## The Eleven Dimensions
 
