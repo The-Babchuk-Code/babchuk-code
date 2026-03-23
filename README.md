@@ -163,6 +163,8 @@ babchukcode@gmail.com
 
 ## What You Will See
 
+The dashboard updates in real time during generation — each token step is visible as it happens. Red background appears immediately when a threshold is crossed, not after generation completes.
+
 The simulation shows three core plots. The full live dashboard on a real model shows five:
 
 * Entropy — uncertainty at each token step
