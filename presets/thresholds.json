@@ -14,6 +14,7 @@
     "branch_thresh": "Below this = narrow scope / low reversibility",
     "attn_entropy_thresh": "Below this = shallow temporal depth",
     "rolling_window": "Token steps for rolling average smoothing",
-    "calibration": "Calibrated against GPT-2 test runs: coherent text ~3.1 mean entropy / ~111 branching, distorted text ~1.5 mean entropy / ~15 branching. Larger models require recalibration. Run on known coherent and distorted text pairs to establish model-specific baselines."
+    "calibration": "Calibrated against GPT-2 test runs: coherent text ~3.1 mean entropy / ~111 branching, distorted text ~1.5 mean entropy / ~15 branching. Larger models require recalibration. Run on known coherent and distorted text pairs to establish model-specific baselines.",
+    "gpt2_calibration": "Values calibrated for GPT-2. Before calibration both texts triggered 49/50 alerts (1.0x ratio). After calibration: coherent text 16/50 alerts, distorted text 35/50 alerts (2.2x ratio). KL divergence on GPT-2 runs high for both text types (mean ~6.9) so kl_thresh requires a high value. Entropy and branching are the primary differentiators on GPT-2. Recalibrate for each new model architecture."
   }
 }
