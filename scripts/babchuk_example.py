@@ -31,13 +31,13 @@ BRANCH_THRESH  = 8.0
 KL_THRESH      = 12.0
 
 
-def run_prompt(prompt, model, tokenizer, max_new_tokens=50):
+def run_prompt(prompt, model, tokenizer, max_new_tokens=50, title=None):
     """Run one prompt through the dashboard. Returns (text, metrics)."""
     metrics = BabchukFlightDashboard(vocab_size=model.config.vocab_size)
 
     input_ids = tokenizer(prompt, return_tensors="pt").input_ids
     generated_ids = input_ids.clone()
-    update_plot, fig = live_flight_panel(metrics)
+    update_plot, fig = live_flight_panel(metrics, title=title)
 
     for step in range(max_new_tokens):
         with torch.no_grad():
@@ -72,15 +72,21 @@ def main():
     print("Model ready.\n")
 
     print("=" * 60)
-    print("TEXT ONE — Coherent processing (Gandalf archetype)")
+    print("Running Text 1 — Coherent processing (Gandalf archetype)...")
     print("=" * 60)
-    gandalf_text, gandalf_m = run_prompt(GANDALF_PROMPT, model, tokenizer)
+    gandalf_text, gandalf_m = run_prompt(
+        GANDALF_PROMPT, model, tokenizer,
+        title="The Babchuk Code — Text 1: Coherent (Gandalf archetype)"
+    )
     print(f"\nGenerated: {gandalf_text[:120]}...")
 
     print("\n" + "=" * 60)
-    print("TEXT TWO — Distorted processing (Saruman archetype)")
+    print("Running Text 2 — Distorted processing (Saruman archetype)...")
     print("=" * 60)
-    saruman_text, saruman_m = run_prompt(SARUMAN_PROMPT, model, tokenizer)
+    saruman_text, saruman_m = run_prompt(
+        SARUMAN_PROMPT, model, tokenizer,
+        title="The Babchuk Code — Text 2: Distorted (Saruman archetype)"
+    )
     print(f"\nGenerated: {saruman_text[:120]}...")
 
     g_entropy  = np.mean(gandalf_m.entropy)

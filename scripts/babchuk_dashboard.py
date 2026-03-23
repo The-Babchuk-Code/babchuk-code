@@ -123,10 +123,10 @@ def register_babchuk_hook(model, metrics_obj):
     return model.lm_head.register_forward_hook(hook)
 
 
-def live_flight_panel(metrics_obj):
+def live_flight_panel(metrics_obj, title=None):
     plt.ion()
     fig, axes = plt.subplots(5, 1, figsize=(12, 10), sharex=True)
-    fig.suptitle("The Babchuk Code — Flight Monitoring Panel v1.1", fontsize=14, fontweight="bold")
+    fig.suptitle(title or "The Babchuk Code — Flight Monitoring Panel v1.2", fontsize=14, fontweight="bold")
 
     metric_names = ["Entropy", "Branching Factor", "KL Divergence",
                     "Attention Entropy", "Attention Span"]
