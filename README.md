@@ -148,6 +148,8 @@ python scripts/babchuk_example.py
 
 This runs on GPT-2 by default. Replace `gpt2` in `babchuk_example.py` with any HuggingFace causal language model name to test on larger models.
 
+Note: The hook attaches to model.lm_head which works with GPT-2, Llama, and most HuggingFace causal models. If you encounter an AttributeError, check your model's architecture and update the hook attachment point in babchuk_dashboard.py accordingly.
+
 ## The Next Step — API Integration
 
 The Babchuk Code currently runs on open source models where internal activations are accessible. The natural next step is for AI providers to embed process-level safety monitoring directly into their APIs, exposing the hooks needed to monitor entropy, branching factor, and attention metrics during inference on closed models.
