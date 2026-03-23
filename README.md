@@ -57,6 +57,10 @@ Gap: 6.55 points.
 
 See experiment/results/ for full data.
 
+## White Paper
+
+A full white paper describing the theoretical framework, experimental validation, computational grounding, and architectural design is available on arXiv. Link will be added here upon publication.
+
 ## Two Complementary Layers
 
 The Babchuk Code operates on two distinct but related levels:
