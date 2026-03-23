@@ -179,6 +179,8 @@ Red background on any plot means a process pathology is detected. Green means wi
 
 The dashboard runs twice in sequence — first for coherent text, then for distorted text. The terminal clearly labels each run. Watch for the transition: entropy drops from around 3.1 to 1.5 and branching factor collapses from around 111 to 15 when the distorted text begins. Red background alerts appear significantly more often during the second run.
 
+On GPT-2, entropy and branching factor show the clearest difference between the two texts. Attention signals show less differentiation at this model scale — this is expected. Attention metrics become more meaningful on larger models.
+
 ## License
 
 Apache 2.0 — see LICENSE. Attribution required in all derivatives.
